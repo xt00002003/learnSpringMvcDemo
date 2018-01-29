@@ -1,5 +1,7 @@
 package com.dark.controller;
 
+import com.dark.service.HelloService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,9 +16,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/hello")
 public class HelloWorldController {
+
+    @Autowired
+    private HelloService helloService;
+
     @RequestMapping("/world")
     @ResponseBody
     public String hello(){
+
+
         return "hello";
     }
 }

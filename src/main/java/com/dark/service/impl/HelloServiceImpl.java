@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @version : Ver 1.0
  * @date : 2018/1/29
  */
-@Service
+@Service("helloService")
 public class HelloServiceImpl implements HelloService {
 
     @Transactional

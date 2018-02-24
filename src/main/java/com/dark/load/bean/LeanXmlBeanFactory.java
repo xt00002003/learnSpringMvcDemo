@@ -1,5 +1,6 @@
 package com.dark.load.bean;
 
+import com.customtag.User;
 import com.dark.service.HelloService;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -21,7 +22,10 @@ public class LeanXmlBeanFactory {
         Resource resource=new ClassPathResource("springmvc-servlet.xml");
         InputStream inputStream=resource.getInputStream();
         BeanFactory bf=new XmlBeanFactory(new ClassPathResource("springmvc-servlet.xml"));
-        HelloService helloService=(HelloService)bf.getBean("helloService");
+//        HelloService helloService=(HelloService)bf.getBean("helloService");
+
+        User user=(User) bf.getBean("testBean");
+        System.out.println(user.toString());
 
     }
 }
